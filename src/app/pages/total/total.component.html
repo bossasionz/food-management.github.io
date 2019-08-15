@@ -16,7 +16,7 @@
                                     <th>วันที่/เดือน/ปี</th>
                                 </tr>
                             </thead>
-                            <tbody *ngFor="let menu of menus; let i = index" (click)="openModal(modalShowMenuList)">
+                            <tbody *ngFor="let menu of menus; let i = index" (click)="openModal(modalShowMenuList, menu.foodName)">
                                 <tr>
                                     <th scope="row">{{menu.orderId + i}}</th>
                                     <td>{{menu.sumTotal}}</td>
@@ -88,9 +88,23 @@
                                 <tr>
                                     <th scope="row">{{ i+1 }}</th>
                                     <td>{{ menu.foodName }}</td>
-                                    <td class="text-right"></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td class="text-right">{{ menu.foodNum }}</td>
+                                    <td>
+                                        <ng-container *ngIf="menu.optExtra">
+                                            พิเศษ
+                                        </ng-container>
+                                        <ng-container *ngIf="!menu.optExtra">
+                                            ธรรมดา
+                                        </ng-container>
+                                    </td>
+                                    <td>
+                                        <ng-container *ngIf="menu.optEgg">
+                                            ใส่
+                                        </ng-container>
+                                        <ng-container *ngIf="!menu.optEgg">
+                                            ไม่ใส่
+                                        </ng-container>
+                                    </td>
                                 </tr>
                             </ng-container>
                         </tbody>
