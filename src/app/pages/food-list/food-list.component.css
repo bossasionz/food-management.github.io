@@ -1,0 +1,247 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    background-image: linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%);   
+    min-height: 700px;
+    padding: 5px 40px 40px 40px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 50px;  
+}
+.col-8{
+    left: 15%;
+}
+.colOrder{
+    padding: 0;
+    margin: 0;
+    padding-top: -20;
+    padding-bottom: 50px;
+    background: transparent;
+    border: 1px solid white;
+}
+
+.form-control{
+    width: 50%;
+}
+.titleList{
+    top: 50%;
+    left: 50%;
+    background-color: #fff;
+    color:#000;
+    padding: 16px;
+    border-radius: 8px;
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 2em;
+    mix-blend-mode: screen;
+    box-shadow: 0 0 16px #000,0 0 32px #000;
+    opacity: 0.9;
+    letter-spacing: 8px;  
+}
+
+.topnav {
+    background-color:transparent;
+    overflow: hidden;
+    font-size: 20px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    color: rgb(255, 255, 255);
+}
+
+.topnav table{
+    font-size: 18px;
+}
+
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: rgba(221, 221, 221, 0.342);
+    color: black;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: rgba(240, 14, 108, 0.795);
+    color: rgb(14, 12, 12);
+  }
+
+.table{
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 70px;
+    background-color: #FEFDFD;
+    overflow-x: auto;
+  }
+
+.table2{
+    text-align: center;
+    width: 100%;
+    height: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #FEFDFD;
+    margin-top: 30px;
+  }
+.tfoot{
+ font-size: 20px;
+ background: rgb(61, 61, 61);
+ border-top: 1px solid rgb(146, 146, 146);
+ color: white;
+}
+
+.btn{
+    font-weight: 700;
+    background-color: transparent;
+    border: 1px solid rgba(8, 8, 8, 0.24);
+    border-radius: 25px;
+    color: #000;
+    }
+    
+.btn:hover{
+    background-color: #FF0066; 
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.btn2{
+    padding: 0;
+    margin: auto;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.2s;
+    background: none;
+    border: 1px solid white;
+}
+.btn2:hover{
+    color: white;
+    background: #2196f3;
+    box-shadow: 0 0 10px #2196f3,0 0 40px #2196f3, 0 0 80px #2196f3;
+}
+
+.switch{
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 20px;
+    vertical-align: middle;
+    margin-top: 8px;
+}
+  
+.switch input {display:none;}
+  
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #A1A6AB;
+    -webkit-transition: .4s;
+    transition: .4s;
+  
+}
+  
+.slider:before{
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 14px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+input:checked + .slider {
+    background-color: #FF0066;
+}
+  
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+  
+  /* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+  
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.info{
+    width: 50%;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 30px;
+    background: linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%); 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: #000;
+}
+.info aside{
+    padding-left: 10px;
+    width: 180%;
+    margin: 0;
+    background: transparent;
+}
+
+.info header nav h3{
+    background: rgb(61, 61, 61);
+    width: 100%;
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+}
+.sumListOrder footer h2{
+    letter-spacing: 3px;
+    border-top: 3px solid white;
+    font-size: 2.5rem;
+    padding-top: 20px;
+}
+.orderuserID{
+    width: 50%;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 30px;
+    background: #FEFDFD;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: #000;
+    margin-top: 30px;
+}
+.orderuserID h2{ 
+    letter-spacing: 2px;
+    font-size: 2.0rem;
+    background:  rgb(61, 61, 61);
+    color: white;
+    text-align: center;
+}
+.orderuserID ul li{
+    list-style: none;
+}
+
+.orderuserID ul{
+    display: '';
+
+}

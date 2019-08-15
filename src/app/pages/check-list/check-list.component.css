@@ -1,0 +1,121 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    background-image: linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%);   
+    min-height: 700px;
+    padding: 5px 40px 40px 40px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 50px;    
+}
+
+.Management{
+    font-size: 40px;
+    font-family: Agency FB;
+    font-weight: 700;
+    color:  #FEFDFD;
+    border-bottom-style: ridge;
+}
+.textName{
+    height: 50px;
+}
+label{
+    font-size: 18px;
+    color: #FEFDFD;
+}
+.table{
+    background-color:  #FEFDFD;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 20px;
+
+}
+.thead{
+    background-color: rgb(254, 255, 255);
+}
+
+/* .btn1,.btn2{
+    top: 50%;
+    left: 50%;
+    background: none;
+    color: black;
+    width: 120px;
+    height: 30px;
+    border-radius: 4px;
+    transition: .6s;
+    overflow: hidden;
+} */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 20px;
+    vertical-align: middle;
+    margin-top: 8px;
+  }
+  
+  .switch input {display:none;}
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(235, 8, 8);
+    -webkit-transition: .4s;
+    transition: .4s;
+  
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 14px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: rgb(7, 233, 7);
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+.btn{
+    font-weight: 700;
+    background-color: transparent;
+    border: 1px solid rgba(8, 8, 8, 0.24);
+    border-radius: 25px;
+    color: #000;
+    }
+    
+.btn:hover{
+    background-color: #FF0066; 
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}

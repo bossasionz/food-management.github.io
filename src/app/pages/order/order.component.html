@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<app-nav-bar></app-nav-bar>
+
+<!-- Order container-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 col-md-auto text-center" id="form">
+            <b class="Management">ระบบจัดการลูกค้า</b>
+            <app-add-item></app-add-item>
+        </div>
+    </div>
+    <table class="table table-hover">
+            
+        <thead class="thead">
+            <tr>
+                <th scope="col">ลำดับที่</th>
+                <th scope="col">ชื่อลูกค้า</th>
+                <th scope="col">เบอร์โทรศัพท์</th>
+                <th scope="col">ที่อยู่ (หอ)</th>
+                <th scope="col" class="text-center">จัดออเดอร์ส่ง / ลบข้อมูล</th>
+                <th scope="col">สถานะการเป็นลูกค้า</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of items; let i = index;"  class="collection">
+                    <!-- <th scope="row">1</th> -->
+                    <td class="collection-item">{{ i+1 }}</td>
+                    <td class="collection-item">{{ item.name }}</td>
+                    <td class="collection-item">{{ item.tel }}</td>
+                    <td class="collection-item">{{ item.address }}</td>
+                    <td class="text-center">
+                        <button [routerLink]="['/food-list', item.id]" type="button" class="btn1 btn-ghost btn-sm">จัดออเดอร์</button>
+                        &nbsp;&nbsp;
+                        <button (click)="deleteItem($event, item)" type="button" class="btn2 btn-ghost btn-sm">ลบรายชื่อ</button>
+                    </td>
+                    <td>
+                        ไม่เป็น
+                        <label class="switch">
+                            <input [(ngModel)]="item.status" type="checkbox">
+                            <span class="slider round"></span>
+                         </label>
+                         ยังเป็น
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+       
+   
+
+</html>

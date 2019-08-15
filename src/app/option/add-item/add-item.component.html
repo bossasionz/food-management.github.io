@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<form>
+    <p>
+        <div class="form-group col-6 pt-2">
+            <p>
+                <div class="col-md-12 pt-2" id="center">
+                    <div class="md-form input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text md-addon"
+                                id="inputGroupMaterial-sizing-default">ชื่อลูกค้า </span>
+                        </div>
+                        <input type="text" class="form-control" [(ngModel)]="item.name" name="name"
+                            aria-label="Sizing example input" aria-describedby="inputGroupMaterial-sizing-default">
+
+                    </div>
+                    <div class="md-form input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text md-addon"
+                                id="inputGroupMaterial-sizing-default">โทรศัพท์</span>
+                        </div>
+                        <input type="text" class="form-control" [(ngModel)]="item.tel" name="tel"
+                            aria-label="Sizing example input" aria-describedby="inputGroupMaterial-sizing-default">
+                    </div>
+                    <div class="md-form input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text md-addon"
+                                id="inputGroupMaterial-sizing-default">ที่อยู่ (หอ)</span>
+                        </div>
+                        <input type="text" class="form-control" [(ngModel)]="item.address" name="address"
+                            aria-label="Sizing example input" aria-describedby="inputGroupMaterial-sizing-default">
+                    </div>
+                    <div class="userAction col-md-12 pt-2" id="btnGroup">
+                        <input type="submit" (click)="onInsert()" class="btn1" value="เพิ่ม">
+                        &nbsp;&nbsp;
+                        <input type="reset" class="btn2" value="ล้าง">
+                        &nbsp;&nbsp;
+                        <input type="submit" (click)="filter()" class="btn3" value="ค้นหา">
+                    </div>
+                </div>
+        </div>
+
+</form>
+
+</html>
