@@ -6,4 +6,5 @@ export interface total {
     tel?:string;
     foodName?:string;
     sumTotal?:number;
+    timeStamp?: any;
 }

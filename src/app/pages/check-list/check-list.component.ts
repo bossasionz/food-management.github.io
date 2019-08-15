@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ItemService } from 'src/app/services/item.service';
 import { total } from 'src/app/models/total';
+import { timestamp } from 'rxjs/operators';
 
 @Component({
   selector: 'app-check-list',
@@ -18,6 +19,7 @@ export class CheckListComponent implements OnInit {
     tel:'',
     foodName: '',
     sumTotal: 0,
+    timeStamp: null,
   };
   order: any;
   items: any;
@@ -42,8 +44,8 @@ export class CheckListComponent implements OnInit {
     this.totals.tel = this.items.tel;
     this.totals.foodName = JSON.stringify(this.order);
     this.totals.sumTotal = this.total;
+    this.totals.timeStamp = this.itemService.timeStamp();
     this.itemService.addOrder(this.totals)
-    this.itemService.timeStamp();
     console.log(this.totals)
     this.router.navigate(['total']);
   }

@@ -20,7 +20,7 @@
                                 <tr>
                                     <th scope="row">{{menu.orderId + i}}</th>
                                     <td>{{menu.sumTotal}}</td>
-                                    <td></td>
+                                    <td>{{menu.timeStamp.seconds * 1000 | date: 'dd/MM/yyyy'}}</td>
                                 </tr>
                             </tbody>
                             <tfoot class="tfoot">

@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { total } from '../models/total';
 import { AngularFireAuth } from '@angular/fire/auth';
-import * as firebase from 'firebase';
+import { firestore } from 'firebase';
 
 @Injectable()
 export class ItemService {
@@ -16,6 +16,8 @@ export class ItemService {
   totalCollection: any;
   menus: Observable<Item[]>;
   user: Observable<firebase.User>;
+  totals: any;
+  created: firebase.firestore.FieldValue;
 
   constructor(public detail: AngularFirestore, public menuOrder: AngularFirestore, private firebaseAuth: AngularFireAuth) {
 
@@ -76,7 +78,7 @@ export class ItemService {
         console.log('Nice, it worked!');
       })
       .catch(err => {
-        console.log('Something went wrong:',err.message);
+        console.log('Something went wrong:', err.message);
       });
   }
 
@@ -87,6 +89,7 @@ export class ItemService {
   }
 
   timeStamp() {
+    return firestore.FieldValue.serverTimestamp();
   }
-  
+
 }

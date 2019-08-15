@@ -2,35 +2,35 @@ export const friedData = [
     {
         foodName: 'กระเพราไก่',
         foodPrice: 50,
-        foodNum: 'NUMBER',
+        foodNum: 0,
         optExtra: false,
         optEgg: false
     },
     {
         foodName: 'กระเพราหมู',
         foodPrice: 50,
-        foodNum: 'NUMBER',
+        foodNum: 0,
         optExtra: false,
         optEgg: false
     },
     {
         foodName: 'ไก่กระเทียม',
         foodPrice: 50,
-        foodNum: 'NUMBER',
+        foodNum: 0,
         optExtra: false,
         optEgg: false
     },
     {
         foodName: 'ไก่เทอริ',
         foodPrice: 50,
-        foodNum: 'NUMBER',
+        foodNum: 0,
         optExtra: false,
         optEgg: false
     },
     {
         foodName: 'ผัดฟักทอง',
         foodPrice: 50,
-        foodNum: 'NUMBER',
+        foodNum: 0,
         optExtra: false,
         optEgg: false
     },

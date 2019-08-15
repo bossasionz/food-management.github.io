@@ -39,6 +39,6 @@ export class TotalComponent implements OnInit {
     this.menuByOrderList = [];
     this.modalService.open(modalShowMenuList, { size: 'lg' });
     this.menuByOrderList = foodName;
-    console.log(this.menuByOrderList)
+    console.log(this.itemService)
   }
 }
