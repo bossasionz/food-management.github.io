@@ -232,7 +232,7 @@
 										</label>
 									</td>
 									<td class="text-center">
-										<button type="button" class="btn btn-ghost btn-md">เลือก</button>
+										<button (click)="submitExtra(menuExtras)" type="button" class="btn btn-ghost btn-md">เลือก</button>
 									</td>
 								</tr>
 							</tbody>
@@ -324,15 +324,24 @@
 						<td class="text-right">{{ menu.foodPrice }}</td>
 						<td class="text-right">{{ menu.foodNum }}</td>
 						<td>
-							<label for="optExtra{{i}}" class="switch">
-								<input [(ngModel)]="menu.optExtra" id="optExtra{{i}}" type="checkbox" disabled>
-								<span class="slider round"></span>
+							<label for="optExtra{{i}}" id="optExtra{{i}}">
+								<ng-container *ngIf="menu.optExtra">
+									พิเศษ
+								</ng-container>
+								<ng-container *ngIf="!menu.optExtra">
+									ธรรมดา
+								</ng-container>
 							</label>
 						</td>
 						<td>
-							<label for="optEgg{{i}}" class="switch">
-								<input [(ngModel)]="menu.optEgg" id="optEgg{{i}}" type="checkbox" disabled>
-								<span class="slider round"></span>
+							<label for="optEgg{{i}}" id="optEgg{{i}}">
+								<ng-container *ngIf="menu.optEgg">
+									ใส่ไข่
+								</ng-container>
+								<ng-container *ngIf="!menu.optEgg">
+									ไม่ใส่ไข่
+								</ng-container>
+
 							</label>
 						</td>
 						<td class="text-right"></td>

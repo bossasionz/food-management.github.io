@@ -65,6 +65,12 @@ export class FoodListComponent implements OnInit {
     console.log(this.orderSelectedList);
   }
   
+  submitExtra(menuExtras) {
+    const cloneData = JSON.parse(JSON.stringify(menuExtras));
+    this.orderSelectedList.push(cloneData);
+    console.log(this.orderSelectedList);
+  }
+  
   submitOtherMenu(menuOthers) {
     const cloneData = JSON.parse(JSON.stringify(menuOthers));
     this.orderSelectedList.push(cloneData);

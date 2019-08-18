@@ -1,62 +1,72 @@
 <!DOCTYPE html>
 <html>
-    <app-nav-bar></app-nav-bar> 
+<app-nav-bar></app-nav-bar>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-md-offset-3" id="form">
-                <div class="card-body">
-                    <h1 class="Header text-center text-white">รายการสั่ง</h1>
-                    <p>
-                        <div class="table-responsive">
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 col-md-offset-3" id="form">
+            <div class="card-body">
+                <h1 class="Header text-center text-white">รายการสั่ง</h1>
+                <p>
+                    <div class="table-responsive">
 
-                            <table class="table table-striped table-bordered table-hover">
-                                <thead class="thead">
-                                    <tr>
-                                        <th>ชื่อ</th>
-                                        <th>เมนู</th>
-                                        <th class="text-center">พิเศษ</th>
-                                        <th class="text-center">ไข่ดาว</th>
-                                        <th class="text-center">จำนวน (กล่อง)</th>
-                                        <th class="text-right">รวม</th>
-                                        <th class="text-center">ดำเนินการ</th>
-                                        <th class="text-center">ส่งออเดอร์</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- <tr *ngFor="let i = index">
+                        <table class="table table-striped table-bordered table-hover">
+                            <thead class="thead">
+                                <tr>
+                                    <th>ชื่อ</th>
+                                    <th class="text-center">จำนวน (กล่อง)</th>
+                                    <th class="text-right">รวม</th>
+                                    <th class="text-center">ดำเนินการ</th>
+                                    <th class="text-center">ส่งออเดอร์</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    <ng-container [attr.aria-expanded]="!isCollapsed[i]" [attr.aria-controls]="'collapseExample'">
+                                <!-- <tr *ngFor="let i = index">
                                         <th scope="row">{{ i+1 }}</th> -->
-                                    <tr>
-                                        <td (click)="showOrder()">{{items.name}}</td>
-                                        <td>555</td>
-                                        <td class="text-center">555</td>
-                                        <td class="text-center">555</td>
-                                        <td class="text-center">{{sumNum}}</td>
-                                        <td class="text-right">{{total}}</td>
-                                        <td class="text-center">
-                                               กำลังทำอยู่ &nbsp;&nbsp;&nbsp;&nbsp;
-                                               <label class="switch">
-                                                        <input type="checkbox">
-                                                        <span class="slider round"></span>
-                                                </label> 
-                                                &nbsp;&nbsp;&nbsp;&nbsp;พร้อมจัดส่ง
-                                        </td>
-                                        <td class="text-center">
-                                                <button (click)="confirmToSend()" type="button" class="btn btn-ghost btn-md">จัดส่ง</button>
-                                        </td>
-                                    </tr>
-                                 </tbody>
-                            </table>
-                        </div>
-                </div>
+                                <tr (click)="isCollapsed[i] = !isCollapsed[i]">
+                                    <td>{{items.name}}</td>
+                                    <td class="text-center">{{sumNum}}</td>
+                                    <td class="text-right">{{total}}</td>
+                                    <td class="text-center">กำลังดำเนินการ</td>
+                                    <td class="text-center">
+                                        <button (click)="confirmToSend()" type="button"
+                                            class="btn btn-ghost btn-md">จัดส่ง</button>
+                                    </td>
+                                </tr>
+                                <ng-container *ngFor="let order of order; let i = index">
+                                        <tr  id="collapseExample{{i}}" [ngbCollapse]="isCollapsed[i]">
+                                          <th scope="row">{{i + 1}}</th>
+                                          <td>{{order.foodName}}</td>
+                                          <td>{{order.foodNum}}</td>
+                                          <td>
+                                            <ng-container *ngIf="order.optEgg">
+                                              ใส่ไข่
+                                            </ng-container>
+                                            <ng-container *ngIf="!order.optEgg">
+                                              
+                                            </ng-container>
+                                            <ng-container *ngIf="order.optExtra">
+                                              พิเศษ
+                                            </ng-container>
+                                            <ng-container *ngIf="!order.optExtra">
+                                            </ng-container>
+                                          </td>
+                                        </tr>
+                                        </ng-container>
+                                </ng-container>
+                            </tbody>
+                        </table>
+                    </div>
             </div>
-    
         </div>
-    </div>
 
-    <div id="stars"></div>
-    <div id="stars2"></div>
-    <div id="stars3"></div>
+    </div>
+</div>
+
+<div id="stars"></div>
+<div id="stars2"></div>
+<div id="stars3"></div>
 
 
 </html>

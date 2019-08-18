@@ -26,7 +26,7 @@ export class CheckListComponent implements OnInit {
   total: any;
   sumNum: number;
   dialog: any;
-  isCollapsed = false;
+  isCollapsed = [];
 
   constructor(public router: Router, private itemService: ItemService) { }
 
