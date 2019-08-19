@@ -1,5 +1,8 @@
+import { map } from 'rxjs/operators';
 import { ItemService } from './../../services/item.service';
 import { Component, OnInit } from '@angular/core';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth',
@@ -9,18 +12,24 @@ import { Component, OnInit } from '@angular/core';
 export class AuthComponent implements OnInit {
   email: string;
   password: string;
+  loginForm: FormGroup;
+  errorMessage: '';
+  fb: any;
 
-  constructor(public ItemService: ItemService) { }
+  constructor(public ItemService: ItemService, private router: Router) { }
 
   ngOnInit() {
   }
+  
 
-  login() {
-    this.ItemService.login(this.email, this.password);
-    this.email = this.password = '';    
+  tryLogin(value){
+    this.ItemService.doLogin(value)
+    .then(res => {
+      this.router.navigate(['/order']);
+    }, err => {
+      console.log(err);
+      this.errorMessage = err.message;
+    })
   }
 
-  logout() {
-    this.ItemService.logout();
-  }
 }

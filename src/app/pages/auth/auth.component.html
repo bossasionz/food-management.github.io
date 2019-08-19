@@ -6,18 +6,19 @@
 				<div class="col-12 logo-img">
 					<img src="../../../assets/pic/khawgang.jpg">
 				</div>
-
-				<form class="col-12">
-						<h1 *ngIf="ItemService.user | async">Welcome {{ (ItemService.user | async)?.email }}!</h1>
-					<div *ngIf="!(ItemService.user | async)" class="form-group">
-							<input [(ngModel)]="email" type="text" class="form-control" placeholder="อีเมลผู้ใช้งาน">
+				<form formArrayName="loginForm">
+				<div class="col-12">
+					<div class="form-group">
+							<input type="text" class="form-control" placeholder="อีเมลผู้ใช้งาน">
 					</div>
 					<div class="form-group">
-						<input [(ngModel)]="password" type="Password" class="form-control" placeholder="รหัสผ่าน">
+						<input type="Password" class="form-control" placeholder="รหัสผ่าน">
+						<label class="error">{{errorMessage}}</label>
 					</div>
-					<button (click)="login()" [disabled]="!email || !password" type="submit" class="btn p-3 mb-3 bg-ghost text-white"><i
+					<button (click)="tryLogin()" type="submit" class="btn p-3 mb-3 bg-ghost text-white"><i
 							class="fas fa-sign-in-alt"></i>เข้าสู่ระบบ</button>
 					<i class="fas fa-user"></i>
+				</div>
 				</form>
 			</div>
 			<!----End of Modal Content -->

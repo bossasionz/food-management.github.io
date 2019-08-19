@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators';
 import { total } from '../models/total';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { firestore } from 'firebase';
+import * as firebase from 'firebase';
 
 @Injectable()
 export class ItemService {
@@ -70,22 +71,37 @@ export class ItemService {
     return this.menus;
   }
 
-  login(email: string, password: string) {
-    this.firebaseAuth
-      .auth
-      .signInWithEmailAndPassword(email, password)
-      .then(value => {
-        console.log('Nice, it worked!');
+  getCurrentUser(){
+    return new Promise<any>((resolve, reject) => {
+      var user = firebase.auth().onAuthStateChanged(function(user){
+        if (user) {
+          resolve(user);
+        } else {
+          reject('No user logged in');
+        }
       })
-      .catch(err => {
-        console.log('Something went wrong:', err.message);
-      });
+    })
   }
 
-  logout() {
-    this.firebaseAuth
-      .auth
-      .signOut();
+  doLogin(value){
+    return new Promise<any>((resolve, reject) => {
+      firebase.auth().signInWithEmailAndPassword(value.email, value.password)
+      .then(res => {
+        resolve(res);
+      }, err => reject(err))
+    })
+  }
+
+  doLogout(){
+    return new Promise((resolve, reject) => {
+      if(firebase.auth().currentUser){
+        this.firebaseAuth.auth.signOut();
+        resolve();
+      }
+      else{
+        reject();
+      }
+    });
   }
 
   timeStamp() {

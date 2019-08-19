@@ -34,3 +34,10 @@ label{
 .thead{
     background-color: rgb(254, 255, 255);
 }
+.orderuserID h2{ 
+    letter-spacing: 2px;
+    font-size: 2.0rem;
+    background:  rgb(61, 61, 61);
+    color: white;
+    text-align: center;
+}

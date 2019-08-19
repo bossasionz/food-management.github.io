@@ -16,7 +16,7 @@
                                     <th>วันที่/เดือน/ปี</th>
                                 </tr>
                             </thead>
-                            <tbody *ngFor="let menu of menus; let i = index" (click)="openModal(modalShowMenuList, menu.foodName)">
+                            <tbody *ngFor="let menu of menus; let i = index" (click)="openModal(modalShowMenuList, menu)">
                                 <tr>
                                     <th scope="row">{{menu.orderId + i}}</th>
                                     <td>{{menu.sumTotal}}</td>
@@ -72,6 +72,16 @@
     <div>
         <div class="col-md-12 col-md-offset-3" id="form">
             <div class="card-body">
+                    <div class="orderuserID">
+                            <header>
+                                 <h2>ข้อมูลลูกค้า</h2>
+                            </header>
+                                <ul>
+                                        <li><label for="name">ชื่อลูกค้า: {{menuByOrderList.name}}</label></li>
+                                        <li><label for="tel">โทรศัพท์: {{menuByOrderList.tel}}</label></li>
+                                        <li><label for="address">ที่อยู่: {{menuByOrderList.address}}</label></li>
+                                </ul>
+                        </div>
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered table-hover">
                         <thead class="thead">
@@ -84,7 +94,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <ng-container *ngFor="let menu of menuByOrderList; let i = index">
+                            <ng-container *ngFor="let menu of menuByOrderList.foodName; let i = index">
                                 <tr>
                                     <th scope="row">{{ i+1 }}</th>
                                     <td>{{ menu.foodName }}</td>

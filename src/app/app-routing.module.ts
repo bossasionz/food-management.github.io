@@ -9,6 +9,7 @@ import { CheckListComponent } from './pages/check-list/check-list.component';
 
 
 const routes: Routes = [
+  { path: '', redirectTo: 'order', pathMatch: 'full'},
   { path: 'auth', component: AuthComponent},
   { path: 'login', component: LoginComponent, canActivate: [AuthComponent] },
   { path: 'order', component: OrderComponent},

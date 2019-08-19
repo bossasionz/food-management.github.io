@@ -25,7 +25,6 @@ export class TotalComponent implements OnInit {
       this.menus = menus;
       this.menus.forEach(item => {
         item.foodName = JSON.parse(item.foodName);
-        console.log(item.foodName)
         });
       let allTotal = 0;
       menus.forEach(order => {
@@ -39,6 +38,6 @@ export class TotalComponent implements OnInit {
     this.menuByOrderList = [];
     this.modalService.open(modalShowMenuList, { size: 'lg' });
     this.menuByOrderList = foodName;
-    console.log(this.itemService)
+    console.log(this.menuByOrderList)
   }
 }

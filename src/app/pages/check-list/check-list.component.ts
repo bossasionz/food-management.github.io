@@ -42,6 +42,7 @@ export class CheckListComponent implements OnInit {
   confirmToSend() {
     this.totals.name = this.items.name;
     this.totals.tel = this.items.tel;
+    this.totals.address = this.items.address;
     this.totals.foodName = JSON.stringify(this.order);
     this.totals.sumTotal = this.total;
     this.totals.timeStamp = this.itemService.timeStamp();
