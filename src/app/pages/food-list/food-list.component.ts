@@ -44,41 +44,48 @@ export class FoodListComponent implements OnInit {
   submitCurryMenu(menuCurrys) {
     const cloneData = JSON.parse(JSON.stringify(menuCurrys));
     this.orderSelectedList.push(cloneData);
+    this.sum(menuCurrys)
     console.log(this.orderSelectedList);
   }
   
   submitNewMenu(menuNews) {
     const cloneData = JSON.parse(JSON.stringify(menuNews));
     this.orderSelectedList.push(cloneData);
+    this.sum(menuNews)
     console.log(this.orderSelectedList);
   }
 
   submitFriedMenu(menuFrieds) {
     const cloneData = JSON.parse(JSON.stringify(menuFrieds));
     this.orderSelectedList.push(cloneData);
+    this.sum(menuFrieds)
     console.log(this.orderSelectedList);
   }
   
   submitSoupMenu(menuSoups) {
     const cloneData = JSON.parse(JSON.stringify(menuSoups));
     this.orderSelectedList.push(cloneData);
+    this.sum(menuSoups)
     console.log(this.orderSelectedList);
   }
   
   submitExtra(menuExtras) {
     const cloneData = JSON.parse(JSON.stringify(menuExtras));
     this.orderSelectedList.push(cloneData);
+    this.sum(menuExtras)
     console.log(this.orderSelectedList);
   }
   
   submitOtherMenu(menuOthers) {
     const cloneData = JSON.parse(JSON.stringify(menuOthers));
     this.orderSelectedList.push(cloneData);
+    this.sum(menuOthers)
     console.log(this.orderSelectedList);
   }
 
   deleteSelectMenu(i) {
     this.orderSelectedList.splice(i, 1);
+    this.sum(this.orderSelectedList)
     console.log(this.orderSelectedList);
   }
 

@@ -28,32 +28,39 @@
 									<th scope="row">{{ i+1 }}</th>
 									<td>{{ menuNews.foodName }}</td>
 									<td class="text-right">{{ menuNews.foodPrice }}</td>
-									<td class="text-right"><input class="text-right" [(ngModel)]="menuNews.foodNum" placeholder="0" required type="number" value="" min="0" max="100"
-											step="1" style="width: 50px;" /></td>
+									<td class="text-right"><input class="text-right" [(ngModel)]="menuNews.foodNum"
+											placeholder="0" required type="number" value="" min="0" max="100" step="1"
+											style="width: 50px;" /></td>
+									<ng-container *ngIf="menuNews.foodNum >= 1">
+										<td>
+											<label class="switch">
+												<input [(ngModel)]="menuNews.optExtra" type="checkbox">
+												<span class="slider round"></span>
+											</label>
+										</td>
+										<td>
+											<label class="switch">
+												<input [(ngModel)]="menuNews.optEgg" type="checkbox">
+												<span class="slider round"></span>
+											</label>
+										</td>
+										<td class="text-center">
+											<button (click)="submitNewMenu(menuNews)" type="button"
+												class="btn btn-ghost btn-md">เลือก</button>
+										</td>
+									</ng-container>
+									<ng-container *ngIf="menuNews.foodNum !>= 1">
 
-									<td>
-										<label class="switch">
-											<input [(ngModel)]="menuNews.optExtra" type="checkbox">
-											<span class="slider round"></span>
-										</label>
-									</td>
-									<td>
-										<label class="switch">
-											<input [(ngModel)]="menuNews.optEgg" type="checkbox">
-											<span class="slider round"></span>
-										</label>
-									</td>
-									<td class="text-center">
-										<button (click)="submitNewMenu(menuNews)" type="button" class="btn btn-ghost btn-md">เลือก</button>
-									</td>
+									</ng-container>
 								</tr>
 							</tbody>
 						</table>
 						<div class="sumListOrder">
-						
-							</div>
+
+						</div>
 					</ng-template>
-				</ngb-tab>  <!--end new-->
+				</ngb-tab>
+				<!--end new-->
 
 
 				<ngb-tab title="เมนูแกง-ต้ม">
@@ -75,32 +82,40 @@
 									<th scope="row">{{ i+1 }}</th>
 									<td>{{ menuCurrys.foodName }}</td>
 									<td class="text-right">{{ menuCurrys.foodPrice }}</td>
-									<td class="text-right"><input class="text-right" [(ngModel)]="menuCurrys.foodNum" placeholder="0" required type="number"
-											value="" min="0" max="100" step="1" style="width: 50px;" /></td>
-									<td>
-										<label class="switch">
-											<input [(ngModel)]="menuCurrys.optExtra" type="checkbox">
-											<span class="slider round"></span>
-										</label>
-									</td>
-									<td>
-										<label class="switch">
-											<input [(ngModel)]="menuCurrys.optEgg" type="checkbox">
-											<span class="slider round"></span>
-										</label>
-									</td>
-									<td class="text-center">
-										<button (click)="submitCurryMenu(menuCurrys)" type="button" class="btn btn-ghost btn-md">เลือก</button>
-									</td>
+									<td class="text-right"><input class="text-right" [(ngModel)]="menuCurrys.foodNum"
+											placeholder="0" required type="number" value="" min="0" max="100" step="1"
+											style="width: 50px;" /></td>
+									<ng-container *ngIf="menuCurrys.foodNum >= 1">
+										<td>
+											<label class="switch">
+												<input [(ngModel)]="menuCurrys.optExtra" type="checkbox">
+												<span class="slider round"></span>
+											</label>
+										</td>
+										<td>
+											<label class="switch">
+												<input [(ngModel)]="menuCurrys.optEgg" type="checkbox">
+												<span class="slider round"></span>
+											</label>
+										</td>
+										<td class="text-center">
+											<button (click)="submitCurryMenu(menuCurrys)" type="button"
+												class="btn btn-ghost btn-md">เลือก</button>
+										</td>
+									</ng-container>
+									<ng-container *ngIf="menuCurrys.foodNum !>= 1">
+
+									</ng-container>
 								</tr>
 							</tbody>
 						</table>
 
 						<div class="sumListOrder">
-							
+
 						</div>
 					</ng-template>
-				</ngb-tab>    <!--end แกง-ต้ม-->
+				</ngb-tab>
+				<!--end แกง-ต้ม-->
 
 
 				<ngb-tab title="เมนูผัด-ทอด">
@@ -122,33 +137,40 @@
 									<th scope="row">{{ i+1 }}</th>
 									<td>{{ menuFrieds.foodName }}</td>
 									<td class="text-right">{{ menuFrieds.foodPrice }}</td>
-									<td class="text-right"><input class="text-right" [(ngModel)]="menuFrieds.foodNum" placeholder="0" required type="number"
-											value="" min="0" max="100" step="1" style="width: 50px;" /></td>
+									<td class="text-right"><input class="text-right" [(ngModel)]="menuFrieds.foodNum"
+											placeholder="0" required type="number" value="" min="0" max="100" step="1"
+											style="width: 50px;" /></td>
+									<ng-container *ngIf="menuFrieds.foodNum >= 1">
+										<td>
+											<label class="switch">
+												<input [(ngModel)]="menuFrieds.optExtra" type="checkbox">
+												<span class="slider round"></span>
+											</label>
+										</td>
+										<td>
+											<label class="switch">
+												<input [(ngModel)]="menuFrieds.optEgg" type="checkbox">
+												<span class="slider round"></span>
+											</label>
+										</td>
+										<td class="text-center">
+											<button (click)="submitFriedMenu(menuFrieds)" type="button"
+												class="btn btn-ghost btn-md">เลือก</button>
+										</td>
+									</ng-container>
+									<ng-container *ngIf="menuFrieds.foodNum !>= 1">
 
-									<td>
-										<label class="switch">
-											<input [(ngModel)]="menuFrieds.optExtra" type="checkbox">
-											<span class="slider round"></span>
-										</label>
-									</td>
-									<td>
-										<label class="switch">
-											<input [(ngModel)]="menuFrieds.optEgg" type="checkbox">
-											<span class="slider round"></span>
-										</label>
-									</td>
-									<td class="text-center">
-										<button (click)="submitFriedMenu(menuFrieds)" type="button" class="btn btn-ghost btn-md">เลือก</button>
-									</td>
+									</ng-container>
 								</tr>
 							</tbody>
 						</table>
-						
+
 						<div class="sumListOrder">
-							
+
 						</div>
 					</ng-template>
-				</ngb-tab>  <!--end ผัดทอด-->
+				</ngb-tab>
+				<!--end ผัดทอด-->
 
 				<ngb-tab title="เมนูยำ">
 					<ng-template ngbTabContent>
@@ -169,34 +191,41 @@
 									<th scope="row">{{ i+1 }}</th>
 									<td>{{ menuSoups.foodName }}</td>
 									<td class="text-right">{{ menuSoups.foodPrice }}</td>
-									<td class="text-right"><input class="text-right" [(ngModel)]="menuSoups.foodNum" placeholder="0" required type="number" value="" min="0" max="100"
-											step="1" style="width: 50px;" /></td>
+									<td class="text-right"><input class="text-right" [(ngModel)]="menuSoups.foodNum"
+											placeholder="0" required type="number" value="" min="0" max="100" step="1"
+											style="width: 50px;" /></td>
+									<ng-container *ngIf="menuSoups.foodNum >= 1">
+										<td>
+											<label class="switch">
+												<input [(ngModel)]="menuSoups.optExtra" type="checkbox">
+												<span class="slider round"></span>
+											</label>
+										</td>
+										<td>
+											<label class="switch">
+												<input [(ngModel)]="menuSoups.optEgg" type="checkbox">
+												<span class="slider round"></span>
+											</label>
+										</td>
+										<td class="text-center">
+											<button (click)="submitSoupMenu(menuSoups)" type="button"
+												class="btn btn-ghost btn-md">เลือก</button>
+										</td>
+									</ng-container>
+									<ng-container *ngIf="menuSoups.foodNum !>= 1">
 
-									<td>
-										<label class="switch">
-											<input [(ngModel)]="menuSoups.optExtra" type="checkbox">
-											<span class="slider round"></span>
-										</label>
-									</td>
-									<td>
-										<label class="switch">
-											<input [(ngModel)]="menuSoups.optEgg" type="checkbox">
-											<span class="slider round"></span>
-										</label>
-									</td>
-									<td class="text-center">
-										<button (click)="submitSoupMenu(menuSoups)" type="button" class="btn btn-ghost btn-md">เลือก</button>
-									</td>
+									</ng-container>
 								</tr>
 							</tbody>
 						</table>
 
 						<div class="sumListOrder">
-							
+
 						</div>
 					</ng-template>
-				</ngb-tab> <!--end ยำ-->
-				
+				</ngb-tab>
+				<!--end ยำ-->
+
 				<ngb-tab title="เมนูพิเศษ">
 					<ng-template ngbTabContent>
 						<table class="table table-hover">
@@ -216,34 +245,40 @@
 									<th scope="row">{{ i+1 }}</th>
 									<td>{{ menuExtras.foodName }}</td>
 									<td class="text-right">{{ menuExtras.foodPrice }}</td>
-									<td class="text-right"><input class="text-right" [(ngModel)]="menuExtras.foodNum" placeholder="0" required type="number" value="" min="0" max="100"
-											step="1" style="width: 50px;" /></td>
-
-									<td>
-										<label class="switch">
-											<input [(ngModel)]="menuExtras.optExtra" type="checkbox">
-											<span class="slider round"></span>
-										</label>
-									</td>
-									<td>
-										<label class="switch">
-											<input [(ngModel)]="menuExtras.optEgg" type="checkbox">
-											<span class="slider round"></span>
-										</label>
-									</td>
-									<td class="text-center">
-										<button (click)="submitExtra(menuExtras)" type="button" class="btn btn-ghost btn-md">เลือก</button>
-									</td>
+									<td class="text-right"><input class="text-right" [(ngModel)]="menuExtras.foodNum"
+											placeholder="0" required type="number" value="" min="0" max="100" step="1"
+											style="width: 50px;" /></td>
+									<ng-container *ngIf="menuExtras.foodNum >= 1">
+										<td>
+											<label class="switch">
+												<input [(ngModel)]="menuExtras.optExtra" type="checkbox">
+												<span class="slider round"></span>
+											</label>
+										</td>
+										<td>
+											<label class="switch">
+												<input [(ngModel)]="menuExtras.optEgg" type="checkbox">
+												<span class="slider round"></span>
+											</label>
+										</td>
+										<td class="text-center">
+											<button (click)="submitExtra(menuExtras)" type="button"
+												class="btn btn-ghost btn-md">เลือก</button>
+										</td>
+									</ng-container>
+									<ng-container *ngIf="menuExtras.foodNum !>= 1">
+									</ng-container>
 								</tr>
 							</tbody>
 						</table>
 
 						<div class="sumListOrder">
-							
+
 						</div>
 					</ng-template>
-				</ngb-tab> <!--end พิเศษ-->
-				
+				</ngb-tab>
+				<!--end พิเศษ-->
+
 				<ngb-tab class="tabtitle" title="อื่นๆ">
 					<ng-template ngbTabContent>
 						<table class="table table-hover">
@@ -260,131 +295,141 @@
 							</thead>
 							<tbody>
 								<tr *ngFor="let menuOthers of menuOther; let i = index;" class="text-center">
-									<th  scope="row">{{ i+1 }}</th>
-									<td><input [(ngModel)]="menuOthers.foodName" class="pt-3-half" contenteditable="true"></td>
-									<td class="text-right"><input [(ngModel)]="menuOthers.foodPrice" class="pt-3-half" contenteditable="true"></td>
-									<td class="text-right"><input class="text-right" [(ngModel)]="menuOthers.foodNum" placeholder="0" required type="number" value="" min="0" max="100"
-											step="1" style="width: 50px;" /></td>
+									<th scope="row">{{ i+1 }}</th>
+									<td><input [(ngModel)]="menuOthers.foodName" class="pt-3-half"
+											contenteditable="true"></td>
+									<td class="text-right"><input [(ngModel)]="menuOthers.foodPrice" class="pt-3-half"
+											contenteditable="true"></td>
+									<td class="text-right"><input class="text-right" [(ngModel)]="menuOthers.foodNum"
+											placeholder="0" required type="number" value="" min="0" max="100" step="1"
+											style="width: 50px;" /></td>
+									<ng-container *ngIf="menuOthers.foodNum >= 1">
+										<td>
+											<label class="switch">
+												<input [(ngModel)]="menuOthers.optExtra" type="checkbox">
+												<span class="slider round"></span>
+											</label>
+										</td>
+										<td>
+											<label class="switch">
+												<input [(ngModel)]="menuOthers.optEgg" type="checkbox">
+												<span class="slider round"></span>
+											</label>
+										</td>
+										<td class="text-center">
+											<button (click)="submitOtherMenu(menuOthers)" type="button"
+												class="btn btn-ghost btn-md">เลือก</button>
+										</td>
+									</ng-container>
+									<ng-container *ngIf="menuOthers.foodNum >= 1">
 
-									<td>
-										<label class="switch">
-											<input [(ngModel)]="menuOthers.optExtra" type="checkbox">
-											<span class="slider round"></span>
-										</label>
-									</td>
-									<td>
-										<label class="switch">
-											<input [(ngModel)]="menuOthers.optEgg" type="checkbox">
-											<span class="slider round"></span>
-										</label>
-									</td>
-									<td class="text-center">
-										<button (click)="submitOtherMenu(menuOthers)" type="button" class="btn btn-ghost btn-md">เลือก</button>
-									</td>
+									</ng-container>
 								</tr>
 
 							</tbody>
 						</table>
-						
+
 						<div class="sumListOrder">
-							
+
 						</div>
 					</ng-template>
-				</ngb-tab>   <!--end อื่นๆ-->
+				</ngb-tab>
+				<!--end อื่นๆ-->
 			</ngb-tabset>
 		</div> <!-- end topnav> -->
 	</nav>
 
 	<div class="orderuserID">
 		<header>
-			 <h2>ข้อมูลลูกค้า</h2>
+			<h2>ข้อมูลลูกค้า</h2>
 		</header>
-			<ul>
-					<li><label for="name">ชื่อลูกค้า: {{items?.name}}</label></li>
-					<li><label for="tel">โทรศัพท์: {{items?.tel}}</label></li>
-					<li><label for="address">ที่อยู่: {{items?.address}}</label></li>
-			</ul>
+		<ul>
+			<li><label for="name">ชื่อลูกค้า: {{items?.name}}</label></li>
+			<li><label for="tel">โทรศัพท์: {{items?.tel}}</label></li>
+			<li><label for="address">ที่อยู่: {{items?.address}}</label></li>
+		</ul>
 	</div>
-		<table class="table2 table table-hover">
-				<thead class="thead-dark">
-					<tr>
-						<th scope="col">ลำดับที่</th>
-						<th scope="col">ชื่อเมนู</th>
-						<th class="text-right" scope="col">ราคา</th>
-						<th class="text-right" scope="col">จำนวน</th>
-						<th scope="col">พิเศษ</th>
-						<th scope="col">ไข่ดาว</th>
-						<th></th>
-						<th scope="col">แก้ไข</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr *ngFor="let menu of orderSelectedList; let i = index">
-						<th scope="row">{{ i+1 }}</th>
-						<td>{{ menu.foodName }}</td>
-						<td class="text-right">{{ menu.foodPrice }}</td>
-						<td class="text-right">{{ menu.foodNum }}</td>
-						<td>
-							<label for="optExtra{{i}}" id="optExtra{{i}}">
-								<ng-container *ngIf="menu.optExtra">
-									พิเศษ
-								</ng-container>
-								<ng-container *ngIf="!menu.optExtra">
-									ธรรมดา
-								</ng-container>
-							</label>
-						</td>
-						<td>
-							<label for="optEgg{{i}}" id="optEgg{{i}}">
-								<ng-container *ngIf="menu.optEgg">
-									ใส่ไข่
-								</ng-container>
-								<ng-container *ngIf="!menu.optEgg">
-									ไม่ใส่ไข่
-								</ng-container>
+	<table class="table2 table table-hover">
+		<thead class="thead-dark">
+			<tr>
+				<th scope="col">ลำดับที่</th>
+				<th scope="col">ชื่อเมนู</th>
+				<th class="text-right" scope="col">ราคา</th>
+				<th class="text-right" scope="col">จำนวน</th>
+				<th scope="col">พิเศษ</th>
+				<th scope="col">ไข่ดาว</th>
+				<th></th>
+				<th scope="col">แก้ไข</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let menu of orderSelectedList; let i = index">
+				<th scope="row">{{ i+1 }}</th>
+				<td>{{ menu.foodName }}</td>
+				<td class="text-right">{{ menu.foodPrice }}</td>
+				<td class="text-right">{{ menu.foodNum }}</td>
+				<td>
+					<label for="optExtra{{i}}" id="optExtra{{i}}">
+						<ng-container *ngIf="menu.optExtra">
+							พิเศษ
+						</ng-container>
+						<ng-container *ngIf="!menu.optExtra">
 
-							</label>
-						</td>
-						<td class="text-right"></td>
-						<td class="text-center">
-							<button (click)="deleteSelectMenu(i)" type="button" class="btn btn-ghost btn-md">ลบ</button>
-						</td>
-						
-					</tr>
-				</tbody>
-				<tfoot class="tfoot">
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td colspan="2" class="text-center">
-								<button (click)="sum()" type="button" class="btn2 btn-ghost btn-md">คำนวณ</button>
-						</td>
-						<td>{{ total }}</td>
-						<!-- <td>{{ total }}</td>
+						</ng-container>
+					</label>
+				</td>
+				<td>
+					<label for="optEgg{{i}}" id="optEgg{{i}}">
+						<ng-container *ngIf="menu.optEgg">
+							ใส่ไข่
+						</ng-container>
+						<ng-container *ngIf="!menu.optEgg">
+
+						</ng-container>
+
+					</label>
+				</td>
+				<td class="text-right"></td>
+				<td class="text-center">
+					<button (click)="deleteSelectMenu(i)" type="button" class="btn btn-ghost btn-md">ลบ</button>
+				</td>
+
+			</tr>
+		</tbody>
+		<tfoot class="tfoot">
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td colspan="2" class="text-center">
+					<button (click)="sum()" type="button" class="btn2 btn-ghost btn-md">คำนวณ</button>
+				</td>
+				<td>{{ total }}</td>
+				<!-- <td>{{ total }}</td>
 						<td colspan="1" style="color: white;"></td>
 						<td><input type="submit" class="btn2 btn-ghost btn-lg" value="สั่งซื้อ"></td> -->
-					</tr>
-					<!-- <td class="text-center">
+			</tr>
+			<!-- <td class="text-center">
 						<button (click)="sum()" type="button" class="btn2 btn-ghost btn-md">คำนวณ</button>
 					</td> -->
-					<!-- <td>{{total}}</td> -->
-						<td colspan="7" style="color: white;"></td>
-						<td><input (click)="confirmOrder()" type="submit" class="btn2 btn-ghost btn-lg" value="สั่งซื้อ"></td>
-				</tfoot>
-			</table>
-			<div class="info col-md-12">
-			<header>
-				<nav>
-					<h3>หมายเหตุ</h3>
-				</nav>
-			</header>
-			<aside>
-				<textarea class="form-control" id="exampleFormControlTextarea1" placeholder="ระบุรายการเพิ่มเติม" rows="3"></textarea>
-			</aside>
-		</div> 
+			<!-- <td>{{total}}</td> -->
+			<td colspan="7" style="color: white;"></td>
+			<td><input (click)="confirmOrder()" type="submit" class="btn2 btn-ghost btn-lg" value="สั่งซื้อ"></td>
+		</tfoot>
+	</table>
+	<div class="info col-md-12">
+		<header>
+			<nav>
+				<h3>หมายเหตุ</h3>
+			</nav>
+		</header>
+		<aside>
+			<textarea [(ngModel)]="items.note" class="form-control" id="exampleFormControlTextarea1" placeholder="ระบุรายการเพิ่มเติม"
+				rows="3"></textarea>
+		</aside>
+	</div>
 
 </div> <!-- end container> -->
 
