@@ -21,6 +21,15 @@ export class CheckListComponent implements OnInit {
     sumTotal: 0,
     timeStamp: null,
   };
+  orderSelectedList = [
+    {
+      id: null,
+      order: [],
+      total: null,
+      sumNum: null
+     }
+   ]
+  cloneData = [];
   order: any;
   items: any;
   total: any;
@@ -35,8 +44,9 @@ export class CheckListComponent implements OnInit {
     this.order = JSON.parse(localStorage.getItem('order'))
     this.total = JSON.parse(localStorage.getItem('total'))
     this.sumNum = JSON.parse(localStorage.getItem('num'))
-    console.log(this.items)
-    console.log(this.order)
+    const cloneData = JSON.parse(JSON.stringify(this.orderSelectedList));
+    this.orderSelectedList.push(cloneData);
+    console.log(this.orderSelectedList)
   }
 
   confirmToSend() {
@@ -47,7 +57,6 @@ export class CheckListComponent implements OnInit {
     this.totals.sumTotal = this.total;
     this.totals.timeStamp = this.itemService.timeStamp();
     this.itemService.addOrder(this.totals)
-    console.log(this.totals)
     this.router.navigate(['total']);
   }
 

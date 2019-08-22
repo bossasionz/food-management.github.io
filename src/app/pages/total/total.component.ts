@@ -21,6 +21,7 @@ export class TotalComponent implements OnInit {
   constructor(private itemService: ItemService, private modalService: NgbModal) { }
 
   ngOnInit() {
+    this.itemService.sortByDate();
     this.itemService.getTotalOrder().subscribe(menus => {
       this.menus = menus;
       this.menus.forEach(item => {

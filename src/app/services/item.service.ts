@@ -108,4 +108,8 @@ export class ItemService {
     return firestore.FieldValue.serverTimestamp();
   }
 
+  sortByDate() {
+    this.items = this.menuOrder.collection('test', ref => ref.orderBy('createdAt')).valueChanges();
+  }
+
 }

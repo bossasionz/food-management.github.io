@@ -113,10 +113,10 @@ export class FoodListComponent implements OnInit {
   }
 
   confirmOrder() {
-    localStorage.setItem('id', JSON.stringify(this.items));
-    localStorage.setItem('order', JSON.stringify(this.orderSelectedList));
-    localStorage.setItem('total', JSON.stringify(this.total));
-    localStorage.setItem('num', JSON.stringify(this.sumNum));
+    // localStorage.setItem('id', JSON.stringify(this.items));
+    // localStorage.setItem('order', JSON.stringify(this.orderSelectedList));
+    // localStorage.setItem('total', JSON.stringify(this.total));
+    // localStorage.setItem('num', JSON.stringify(this.sumNum));
     this.router.navigate(['check-list']);
   }
 
