@@ -36,27 +36,26 @@ export class CheckListComponent implements OnInit {
   sumNum: number;
   dialog: any;
   isCollapsed = [];
+  dataOrder: any;
 
   constructor(public router: Router, private itemService: ItemService) { }
 
   ngOnInit() {
-    this.items = JSON.parse(localStorage.getItem('id'))
-    this.order = JSON.parse(localStorage.getItem('order'))
-    this.total = JSON.parse(localStorage.getItem('total'))
-    this.sumNum = JSON.parse(localStorage.getItem('num'))
-    const cloneData = JSON.parse(JSON.stringify(this.orderSelectedList));
-    this.orderSelectedList.push(cloneData);
-    console.log(this.orderSelectedList)
+    this.dataOrder = JSON.parse(localStorage.getItem('orderList'));
+    console.log(this.dataOrder)
   }
 
-  confirmToSend() {
-    this.totals.name = this.items.name;
-    this.totals.tel = this.items.tel;
-    this.totals.address = this.items.address;
-    this.totals.foodName = JSON.stringify(this.order);
-    this.totals.sumTotal = this.total;
+  confirmToSend(o, orderList) {
+    console.log(this.totals)
+    console.log(orderList)
+    this.totals.name = orderList['item'].name;
+    this.totals.tel = orderList['item'].tel;
+    this.totals.address = orderList['item'].address;
+    this.totals.foodName = JSON.stringify(orderList.order);
+    this.totals.sumTotal = orderList.total;
     this.totals.timeStamp = this.itemService.timeStamp();
     this.itemService.addOrder(this.totals)
+    this.dataOrder.splice(this.dataOrder, o);
     this.router.navigate(['total']);
   }
 
