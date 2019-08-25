@@ -58,24 +58,6 @@ body {
 .brannav ul{
     display: flex;
 }
-.brannav ul li{
-    list-style: none;
-    transform: translateX(100rem);
-    animation: slideIn .5s forwards;
-}
-.brannav ul li:nth-child(1){
-    animation-delay: 0s;
-}
-
-.brannav ul li:nth-child(2){
-    animation-delay: .5s;
-}
-.brannav ul li:nth-child(3){
-    animation-delay: 1s;
-}
-.brannav ul li:nth-child(4){
-    animation-delay: 1.5s;
-}
 
 .brannav ul li a{
     padding: 1rem 0;
@@ -84,9 +66,9 @@ body {
     letter-spacing: 2px;
     color: white;
 }
-.brannav ul li a:last-child{
+/* .brannav ul li a:last-child{
     margin-right: 0;
-}
+} */
 .brannav ul li a::before,
 .brannav ul li a::after{
     content: '';

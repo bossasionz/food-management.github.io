@@ -37,12 +37,11 @@
         <header>
             <nav class="brannav">
                 <img src="../../../assets/pic/brand.jpg" width="130" height="130" class="align-center" alt="">
-                <h1 class="brand"><a href="#" class="nav-item nav-link" [routerLink]="['/order']">ตา<span>กะ</span>ยายข้าวราดแกง</a></h1>
+                <h1 class="brand"><a href="#" class="nav-item nav-link" (click)="redirectToOrder()">ตา<span>กะ</span>ยายข้าวราดแกง</a></h1>
                 <ul>
-                    <li><a href="#" class="nav-item nav-link" [routerLink]="['/order']">หน้าหลัก</a></li>
-                    <li><a href="#" class="nav-item nav-link" [routerLink]="['/check-list']">เช็ครายการสั่ง</a></li>
-                    <li><a href="#" class="nav-item nav-link" [routerLink]="['/total']">ดูยอดขาย</a></li>
-                    <li><a href="#" class="nav-item nav-link">ออกจากระบบ</a></li>
+                    <li><a href="#" class="nav-item nav-link" (click)="redirectToOrder()">หน้าหลัก</a></li>
+                    <li><a href="#" class="nav-item nav-link" [routerLink]="['/check-list']">รายการสั่ง</a></li>
+                    <li><a href="#" class="nav-item nav-link" [routerLink]="['/total']">ยอดขาย</a></li>
                 </ul>
             </nav>
         </header>

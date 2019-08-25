@@ -55,13 +55,9 @@ export class CheckListComponent implements OnInit {
     this.totals.sumTotal = orderList.total;
     this.totals.timeStamp = this.itemService.timeStamp();
     this.itemService.addOrder(this.totals)
-    this.dataOrder.splice(this.dataOrder, o);
+    this.dataOrder.splice(o, 1);
+    localStorage.setItem('orderList', JSON.stringify(this.dataOrder));
     this.router.navigate(['total']);
   }
 
-  
-  showOrder() {
-    
-  }
-  
 }

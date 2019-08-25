@@ -2,3 +2,21 @@ body{
     padding: 0;
     margin: 0;
 }
+.brannav ul li{
+    list-style: none;
+    transform: translateX(100rem);
+    animation: slideIn .5s forwards;
+}
+/* .brannav ul li:nth-child(1){
+    animation-delay: 0s;
+}
+
+.brannav ul li:nth-child(2){
+    animation-delay: .5s;
+}
+.brannav ul li:nth-child(3){
+    animation-delay: 1s;
+}
+.brannav ul li:nth-child(4){
+    animation-delay: 1.5s;
+} */

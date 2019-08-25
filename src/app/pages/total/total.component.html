@@ -20,16 +20,18 @@
                                 <tr>
                                     <th scope="row">{{menu.orderId + i}}</th>
                                     <td>{{menu.sumTotal}}</td>
-                                    <td>{{menu.timeStamp.seconds * 1000 | date: 'full'}}</td>
+                                    <td>{{menu.timeStamp.seconds * 1000 | date: 'dd/MM/yyyy เวลา H:mm น.'}}</td>
                                 </tr>
                             </tbody>
                             <tfoot class="tfoot">
                                 <tr>
                                     <td colspan="2" class="text-right">ยอดรวม</td>
-                                    <td>{{ allTotal }}</td>
+                                    <td>{{ allTotal }} บาท</td>
                                 </tr>
                             </tfoot>
                         </table>
+                        <ngb-pagination [collectionSize]="120" [(page)]="page" [maxSize]="5" [rotate]="true" [boundaryLinks]="true"></ngb-pagination>
+                        <pre class="Header text-center text-white">Current page: {{page}}</pre>
                     </div>
             </div>
         </div>

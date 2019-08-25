@@ -17,6 +17,7 @@ export class TotalComponent implements OnInit {
   foodName: any;
   orderSelectedList = [];
   menuByOrderList: any
+  page = 1;
 
   constructor(private itemService: ItemService, private modalService: NgbModal) { }
 
