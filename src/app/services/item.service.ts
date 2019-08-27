@@ -109,7 +109,7 @@ export class ItemService {
   }
 
   sortByDate() {
-    this.menus = this.menuOrder.collection('totalOrder', ref => ref.orderBy('timeStamp')).valueChanges();
+    this.menus = this.menuOrder.collection('totalOrder', ref => ref.orderBy('timeStamp','desc')).valueChanges();
   }
 
 }
